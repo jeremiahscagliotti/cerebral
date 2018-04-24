@@ -1,12 +1,18 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('UserInterests', {
-      user_interest_id: {
+    return queryInterface.createTable('Uploads', {
+      upload_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
+      },
+      file_name: {
+        type: Sequelize.STRING(255)
+      },
+      date: {
+        type: Sequelize.DATE
       },
       user_id: {
         type: Sequelize.INTEGER,
@@ -17,11 +23,11 @@ module.exports = {
         onUpdate: 'cascade',
         onDelete: 'cascade'
       },
-      interest_id: {
+      upload_type_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Interests',
-          key: "interest_id"
+          model: 'UploadTypes',
+          key: 'upload_type_id'
         },
         onUpdate: 'cascade',
         onDelete: 'cascade'
@@ -37,6 +43,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('UserInterests');
+    return queryInterface.dropTable('Uploads');
   }
 };
