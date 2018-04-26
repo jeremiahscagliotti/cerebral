@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('UserInChats', {
-      user_in_chats_id: {
+    return queryInterface.createTable('Endorsements', {
+      endorsement_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -11,7 +11,7 @@ module.exports = {
       user_id: {
         type: Sequelize.INTEGER
       },
-      chat_id: {
+      user_skill_id: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -25,6 +25,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('UserInChats');
+    return queryInterface.dropTable('Endorsements');
   }
 };

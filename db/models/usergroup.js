@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UserGroup.associate = function(models) {
     // associations can be defined here
-    User.belongsToMany(models.Group, {through: "UserGroup", foreignKey: "user_id"});
-    Group.belongsToMany(models.User, {through: "UserGroup", foreignKey: "group_id"});
+    models.User.belongsToMany(models.Group, {through: "UserGroup", foreignKey: "user_id"});
+    models.Group.belongsToMany(models.User, {through: "UserGroup", foreignKey: "group_id"});
   };
   return UserGroup;
 };

@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   AttendeeStatus.associate = function(models) {
     // associations can be defined here
-      AttendeeStatus.hasMany(models.EventAttendee);
-      EventAttendee.belongsTo(models.AttendeeStatus);
+      models.AttendeeStatus.hasMany(models.EventAttendee);
+      models.EventAttendee.belongsTo(models.AttendeeStatus);
   };
   return AttendeeStatus;
 };

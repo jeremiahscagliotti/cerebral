@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Post.associate = function(models) {
     // associations can be defined here
-    Post.belongsTo('User', { foreignkey: 'user_id' });
-    Post.belongsTo('PageType', { foreignkey: 'page_type_id' });
+    Post.belongsTo(models.User, { foreignkey: 'user_id' });
+    Post.belongsTo(models.PageType, { foreignkey: 'page_type_id' });
 
   };
   return Post;
