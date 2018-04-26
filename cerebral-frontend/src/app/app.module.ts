@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
-//Http
-import { HttpService } from "./http.service";
+import { HttpService } from "./http/http.service";
+import { AuthenticationService } from "./authentication/authentication.service";
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
 
 //form  
 import { FormsModule } from '@angular/forms';
@@ -29,7 +30,8 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     SignUpComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [HttpService],
+  providers: [HttpService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
