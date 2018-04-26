@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   message.associate = function(models) {
     // associations can be defined here
-    User.hasMany(Chat, { foreignKey: 'user_id', sourceKey: 'isoCode' });
-    Chat.belongsTo(User, { foreignKey: 'chat_id', targetKey: 'isoCode' });
+    models.User.hasMany(models.Chat, { foreignKey: 'user_id' });
+    models.Chat.belongsTo(models.User, { foreignKey: 'chat_id' });
   };
   return message;
 };

@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UserJob.associate = function(models) {
     // associations can be defined here
-      Job.belongsToMany(models.User, {through: "UserJob", foreignKey: "job_id"});
-      User.belongsToMany(models.Job, {through: "UserJob", foreignKey: "user_id"});
+      models.Job.belongsToMany(models.User, {through: "UserJob", foreignKey: "job_id"});
+      models.User.belongsToMany(models.Job, {through: "UserJob", foreignKey: "user_id"});
   };
   return UserJob;
 };

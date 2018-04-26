@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   PostShare.associate = function(models) {
     // associations can be defined here
-    Post.belongsToMany(models.User, { through: "PostShare", foreignKey: "post_id" });
-    User.belongsToMany(models.Post, { through: "PostShare", foreignKey: "share_by_id" });
+    models.Post.belongsToMany(models.User, { through: "PostShare", foreignKey: "post_id" });
+    models.User.belongsToMany(models.Post, { through: "PostShare", foreignKey: "share_by_id" });
   };
   return PostShare;
 };

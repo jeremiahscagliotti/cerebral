@@ -7,6 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UserView.associate = function(models) {
     // associations can be defined here
+      models.User.belongsToMany(models.User, {as: 'UserProfiles', through: "UserView", foreignKey: "user_id"});
+      models.User.belongsToMany(models.User, {as: 'Viewers', through: "UserView", foreignKey: "viewed_id"});
   };
   return UserView;
 };
