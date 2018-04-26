@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UserSearch.associate = function(models) {
     // associations can be defined here
-    UserSearch.hasMany(User, { foreignKey: 'user_id', sourceKey: 'isoCode' });
+    models.UserSearch.hasMany(models.User, { foreignKey: 'user_id', sourceKey: 'isoCode' });
   };
   return UserSearch;
 };

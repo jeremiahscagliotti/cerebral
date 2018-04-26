@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Recruiter.associate = function(models) {
     // associations can be defined 
-    Recruiter.belongsTo('User', { foreignkey: 'user_id' });
-    Recruiter.belongsTo('PageType', { foreignkey: 'page_type_id' });
+    Recruiter.belongsTo(models.User, { foreignkey: 'user_id' });
+    Recruiter.belongsTo(models.PageType, { foreignkey: 'page_type_id' });
   };
   return Recruiter;
 };

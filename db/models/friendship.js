@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Friendship.associate = function(models) {
     // associations can be defined here
-    Friendship.belongsTo('User', { foreignkey: 'user_id' });
-    Friendship.belongsTo('Friendship', { foreignkey: 'friend_id' })
+    Friendship.belongsTo(models.User, { foreignkey: 'user_id' });
+    Friendship.belongsTo(models.Friendship, { foreignkey: 'friend_id' })
   };
   return Friendship;
 };

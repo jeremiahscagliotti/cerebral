@@ -1,17 +1,20 @@
-*{
+* {
     margin: auto 0;
- };
+}
+
 #header {
     height: 100px;
     width: auto;
     background-color: lightcoral;
-};
+}
+
 .body {
     height: 500px;
     width: auto;
-};
+}
+
 #footer {
     height: 200px;
     width: auto;
     background-color: darkblue;
-};
+}

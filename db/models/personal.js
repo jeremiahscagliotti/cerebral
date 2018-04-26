@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Personal.associate = function(models) {
     // associations can be defined here
-    Personal.belongsTo('User',{foreignkey:'user_id'});
-    Personal.belongsTo('PageType',{foreignkey:'page_type_id'});
+    Personal.belongsTo(models.User,{foreignkey:'user_id'});
+    Personal.belongsTo(models.PageType,{foreignkey:'page_type_id'});
   };
   return Personal;
 };

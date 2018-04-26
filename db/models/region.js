@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Region.associate = function(models) {
     // associations can be defined here
-    Region.hasMany(Company, { foreignKey: 'company_id', sourceKey: 'isoCode' });
+    Region.hasMany(models.Company, { foreignKey: 'company_id', sourceKey: 'isoCode' });
   };
   return Region;
 };
