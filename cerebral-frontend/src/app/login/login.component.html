@@ -8,9 +8,6 @@
       <input 
       type="email" 
       name="email" 
-      required
-      [(ngModel)]="newUser.email"
-      #email="ngModel"
       >
     </p>
 
@@ -19,23 +16,11 @@
       <input 
       type="password" 
       name="password"
-      required
-      [(ngModel)]="newUser.password"
-      #password="ngModel"
       >
     </p>
 
     <input type="submit" value="Login">
 
   </form>
-
-  <button [routerLink]="['/registration']">Sign Up</button>
-
-    <div *ngIf="email.errors">
-      <p *ngIf="email.errors.required">Email Required</p>
-    </div>
-    <div *ngIf="password.errors">
-      <p *ngIf="password.errors.required">Password Required</p>
-    </div>
   
 </div>
